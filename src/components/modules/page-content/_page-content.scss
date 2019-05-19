@@ -1,0 +1,46 @@
+// Page Content
+//
+// Flexbox content boxes. 
+//
+// Markup: page-content.twig
+//
+// Style guide: 6.5
+.page-content {
+    grid-area: main;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    align-content: flex-start;
+    @include typeface(base);
+    @include typeset(default);
+
+    @include respond-to(l) {
+        flex-direction: row;
+    }
+    &__item {
+        width: 100%;
+        background-color: color(blue-light);
+        min-height: 200px;
+        padding: $spacing-s $spacing-m $spacing-m;
+        margin-top: $spacing-m;
+
+        h3 {
+            margin-top: $spacing-s;
+            font-weight: 600;
+            color: color(blue-dark)
+        }
+
+        p {
+            flex-grow: 1;
+            color: color(blue-dark)
+        }
+
+        @include respond-to(l) {
+            flex: 0 48.3%;
+            margin-top: 0;
+        }
+    }
+}

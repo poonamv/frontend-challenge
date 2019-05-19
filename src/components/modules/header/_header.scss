@@ -1,0 +1,63 @@
+// Header
+//
+// Standard header setup with a mobile menu.
+//
+//
+// Markup: header.twig
+//
+// Style guide: 6.4
+
+// SVGs
+$mobile-menu: url('/assets/mobile-menu.svg');
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    grid-area: header;
+}
+
+.header .nav {
+    display: none;
+}
+
+@include respond-to('xl') {
+    .header {
+        display: flex;
+        justify-content: initial;
+    }
+    .header .nav {
+        display: flex;
+        margin-left: 70px;
+    }
+}
+
+.nav li a,
+.nav--small li a,
+.nav__item a {
+    @include typeface(base);
+    @include typeset(default);
+    line-height: $base-line-height;
+    font-weight: bold;
+    display: block;
+    cursor: pointer;
+    color: color('blue-mid');
+    text-decoration: none;
+}
+
+.nav ul,
+.nav--small ul,
+.nav__level-1 {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    max-width: none;
+    display: flex;
+    flex-wrap:  nowrap;
+}
+
+.nav li,
+.nav--small li,
+.nav__item {
+    margin-right: 40px;
+}

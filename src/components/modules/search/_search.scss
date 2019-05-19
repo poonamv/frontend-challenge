@@ -1,0 +1,51 @@
+// Search
+//
+// Markup: search.twig
+//
+// Style guide: 5.1
+// SVG Links
+$search: url(',/assets/search.svg');
+
+.search {
+    @include respond-to('xl') {
+        display: flex;
+    }
+    grid-area: search;
+    display: none;
+}
+
+[type="search"] {
+    @include typeface(base);
+    @include typeset(default);
+    color: color(black);
+    background-color: color(grey-xxlight);
+    border: 1px solid color(grey-xxlight);
+    border-radius: 4px;
+    max-width: 100%;
+    text-indent: .44444rem;
+    cursor: text;
+}
+
+input {
+
+::placeholder {
+    @include typeface(base);
+    @include typeset(default);
+    color: color(black);
+    opacity: 1;
+}
+}
+
+.button--search {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: color(grey-xxlight);
+    background: $search center no-repeat;
+    border: 0;
+    color: color(black);
+    padding: 0;
+    cursor: pointer;
+    vertical-align: middle;
+    transition: all .2s ease-in-out;
+}
